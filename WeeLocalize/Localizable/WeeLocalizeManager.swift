@@ -10,11 +10,11 @@ import Foundation
 
 typealias LocalizeSource = [String: [String:String]]
 
-class WeeLocalizeManager {
-    static let shared = WeeLocalizeManager()
+public class WeeLocalizeManager {
+    public static let shared = WeeLocalizeManager()
     
-    private var localizeSource: LocalizeSource = [:]
-    private var localizeSettings: LocalizeSettings = LocalizeSettings(default_language: "", available_languages: [])
+    public var localizeSource: LocalizeSource = [:]
+    public var localizeSettings: LocalizeSettings = LocalizeSettings(default_language: "", available_languages: [])
     
     var localizationFileName: String = "localize" {
         didSet {
@@ -56,7 +56,7 @@ class WeeLocalizeManager {
         loadLocalizationFile(str: localizationFileName)
     }
     
-    func loadLocalizationFile(str: String) {
+    public func loadLocalizationFile(str: String) {
         guard let path = Bundle.main.url(forResource: str, withExtension: "json"),
             let data = try? Data(contentsOf: path) else {
                 return
@@ -73,7 +73,7 @@ class WeeLocalizeManager {
         localizeSettings = jsonContent.localize_settings
     }
     
-    func getString(fromIdentifier key: String, language: String? = nil) -> String {
+    public func getString(fromIdentifier key: String, language: String? = nil) -> String {
         return getStringHandler(key, language)
     }
 }

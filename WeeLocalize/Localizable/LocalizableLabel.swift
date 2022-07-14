@@ -10,15 +10,15 @@ import UIKit
 
 open class LocalizableLabel: UILabel, Localizable {    
     //MARK: Localizable Protocol
-    @IBInspectable var localizableIdentifier: String = "" {
+    @IBInspectable public var localizableIdentifier: String = "" {
         didSet { reload() }
     }
     
-    func reload() {
+    public func reload() {
         setString(fromIdentifier: localizableIdentifier)
     }
     
-    func setString(fromIdentifier key: String, language: String? = nil) {
+    public func setString(fromIdentifier key: String, language: String? = nil) {
         guard localizableIdentifier != "" else {
             return
         }
