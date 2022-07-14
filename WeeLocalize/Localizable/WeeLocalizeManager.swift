@@ -13,8 +13,8 @@ typealias LocalizeSource = [String: [String:String]]
 public class WeeLocalizeManager {
     public static let shared = WeeLocalizeManager()
     
-    public var localizeSource: LocalizeSource = [:]
-    public var localizeSettings: LocalizeSettings = LocalizeSettings(default_language: "", available_languages: [])
+    var localizeSource: LocalizeSource = [:]
+    var localizeSettings: LocalizeSettings = LocalizeSettings(default_language: "", available_languages: [])
     
     var localizationFileName: String = "localize" {
         didSet {

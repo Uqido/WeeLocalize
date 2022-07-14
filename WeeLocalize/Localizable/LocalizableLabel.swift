@@ -14,11 +14,11 @@ open class LocalizableLabel: UILabel, Localizable {
         didSet { reload() }
     }
     
-    public func reload() {
+    func reload() {
         setString(fromIdentifier: localizableIdentifier)
     }
     
-    public func setString(fromIdentifier key: String, language: String? = nil) {
+    func setString(fromIdentifier key: String, language: String? = nil) {
         guard localizableIdentifier != "" else {
             return
         }

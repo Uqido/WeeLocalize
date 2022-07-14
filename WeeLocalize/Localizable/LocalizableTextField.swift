@@ -10,7 +10,7 @@ import UIKit
 
 open class LocalizableTextField: UITextField, Localizable {
     //MARK: Localizable Protocol
-    @IBInspectable var localizableIdentifier: String = "" {
+    @IBInspectable public var localizableIdentifier: String = "" {
         didSet { reload() }
     }
     
